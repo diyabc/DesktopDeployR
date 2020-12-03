@@ -1,0 +1,24 @@
+Files: ./dist/R-Portable/App/R-Portable/*
+Copyright: R project contributors
+License: GPL-2 (see ./dist/R-Portable/App/R-Portable/COPYING)
+
+Files: ./dist/R-Portable/* (except aforementioned files)
+Copyright: Contributors to https://sourceforge.net/projects/rportable/
+License: GPL-2 (see ./dist/R-Portable/App/R-Portable/COPYING)
+
+Files: ./app/library/diyabcGUI/bin/diyabc* ./app/library/diyabcGUI/abcranger*
+Copyright: 2019-2020 DIYABC-RF Core team
+License: MIT
+
+Files: ./app/library/* (except aforementioned files)
+Copyright: see copyright statement (in COPYRIGHT, LICENSE or DESCRIPTION files) in each sub-directory
+License: see licensing (in COPYRIGHT, LICENSE or DESCRIPTION files) in each sub-directory
+
+Files: ./* (except aforementioned files)
+Copyright: 2015-2020 Wyming Lee Pang and 2019-2020 DIYABC-RF Core team (see commit history at https://github.com/diyabc/DesktopDeployR)
+License: Apache 2.0 (see ./LICENSE file)
+
+DIYABC-RF Core team: François-David Collin, Ghislain Durif, Louis Raynal, 
+Mathieu Gautier, Renaud Vitalis, Eric Lombaert, Jean-Michel Marin, Arnaud Estoup
+
+Note: './' refers to project root directory.
