@@ -1,1 +1,1 @@
-dist\R-Portable\App\R-Portable\bin\Rscript.exe prepare.R
+dist\\R-Portable\\App\\R-Portable\\bin\\Rscript.exe prepare.R

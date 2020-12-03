@@ -13,9 +13,11 @@ R_lib <- file.path("app", "library")
 if(!dir.exists(R_lib)) dir.create(R_lib)
 
 # requirement
-install.package("devtools", lib = R_lib)
+install.packages("devtools", lib = R_lib)
 install.packages("jsonlite", lib = R_lib)
-dep <- unlist(read.table("requirements.txt", header = FALSE, stringsAsFactors = FALSE))
+dep <- unlist(read.table(
+    file.path("app", "packages.txt"), header = FALSE, stringsAsFactors = FALSE
+))
 install.packages(dep, lib = R_lib)
 
 # local install from Rcpp
