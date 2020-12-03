@@ -10,7 +10,7 @@ local({
 
 # R lib
 R_lib <- file.path("app", "library")
-if(dir.exists(R_lib)) dir.create(R_lib)
+if(!dir.exists(R_lib)) dir.create(R_lib)
 
 # requirement
 install.package("devtools", lib = R_lib)
@@ -19,9 +19,12 @@ dep <- unlist(read.table("requirements.txt", header = FALSE, stringsAsFactors = 
 install.packages(dep, lib = R_lib)
 
 # local install from Rcpp
-devtools::install("Rcpp", args = c('--library="./app/library/"'))
+devtools::install(
+    file.path("src", "Rcpp"), 
+    args = c(paste0('--library="', '.', .Platform$file.sep, R_lib, '"'))
+)
 
-# install from zip source
+# install diyabcGUI from zip source
 zip_src <- tail(sort(list.files("src", pattern = "diyabcGUI*")), 1)
 install.packages(
     file.path("src", zip_src), repos = NULL, type = "win.binary", lib = R_lib
