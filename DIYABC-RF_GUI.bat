@@ -1,1 +1,2 @@
-wscript dist\script\wsf\run.wsf
+dist\\R-Portable\\App\\R-Portable\\bin\\Rscript.exe generate_Renviron.R
+wscript dist\\script\\wsf\\run.wsf
