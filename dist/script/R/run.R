@@ -15,7 +15,7 @@ message('library paths:\n', paste('... ', .libPaths(), sep='', collapse='\n'))
 message('working path:\n', paste('...', appwd))
 
 # utility function for ensuring that a package is installed
-ensure = function(package, repo = 'http://cran.rstudio.com', load = FALSE) {
+ensure = function(package, repo = 'https://cran.r-project.org', load = FALSE) {
   if (!(package %in% rownames(installed.packages()))) {
     install.packages(package, repo = repo, lib = applibpath)
   }

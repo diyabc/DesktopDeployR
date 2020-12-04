@@ -26,7 +26,7 @@ if (this.JSON) {
 
 var oDEFAULTS = {
 	"packages": {
-		"cran": "http://cran.rstudio.com"
+		"cran": "https://cran.r-project.org"
 	},
 
 	"r_exec": {
@@ -42,7 +42,7 @@ var oDEFAULTS = {
 
 	"logging": {
 		"use_userprofile": false,
-		"filename": "error"
+		"filename": "error.log"
 	}
 };
 
@@ -69,9 +69,7 @@ if (!oFSO.FolderExists(sLogPath)) {
 }
 
 //' Timestamp log files
-var date = new Date().toISOString();
-
-var sLogFile = oConfig.logging.filename ? oConfig.logging.filename + "_" + date + ".log" : oDEFAULTS.logging.filename + "_" + date + ".log";
+var sLogFile = oConfig.logging.filename ? oConfig.logging.filename : oDEFAULTS.logging.filename;
 
 //' Define the R interpreter
 var Rhome = oConfig.r_exec.home ? oConfig.r_exec.home : oDEFAULTS.r_exec.home;
