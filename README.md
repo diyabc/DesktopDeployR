@@ -27,7 +27,7 @@ See [COPYRIGHTS](./COPYRIGHTS) for more details on copyrights and licensing.
 
 ### Usage
 
-1. Run `DIYABC-RF_GUI.bat` in the previously extracted `DIYABC-RF_GUI_<latest_version>` directory (either by double-clicking it or in a terminal, you can also create a shortcut to run it by right-clicking on it).
+1. Run `DIYABC-RF_GUI` (or `DIYABC-RF_GUI.bat`) in the previously extracted `DIYABC-RF_GUI_<latest_version>` directory (either by double-clicking it or in a terminal, you can also create a shortcut to run it by right-clicking on it).
 
 2. It will open a new tab in your web browser and you can use `DIYABC-RF GUI` as a web app.
 
@@ -37,7 +37,13 @@ See [COPYRIGHTS](./COPYRIGHTS) for more details on copyrights and licensing.
 
 ---
 
-## Recipe to build (for developpers)
+## Debugging (for advanced users or developers)
+
+If you encounter any issue, you can try to use the application as a local shiny app (it should give you additional verbosity). To do this you can run `cmd.exe /c run_local_app_debug.bat` in a terminal.
+
+---
+
+## Recipe to build (for developers)
 
 Adapted from DesktopDeployR [framework](./DesktopDeployR.md)
 

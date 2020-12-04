@@ -1,0 +1,1 @@
+dist\\R-Portable\\App\\R-Portable\\bin\\Rscript.exe run_local_app_debug.R
