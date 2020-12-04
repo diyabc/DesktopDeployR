@@ -60,10 +60,15 @@ Adapted from DesktopDeployR [framework](./DesktopDeployR.md)
 
 > You should now have `dist/R-Portable/App/R-Portable/bin/Rscript.exe` and `dist/R-Portable/App/R-Portable/bin/R.exe`.
 
-2. Run batch script `prepare.bat` inside project root directory.
+2. Run batch script `prepare.bat` inside project root directory (e.g. with `cmd.exe /c prepare.bat`).
 
 3. Zip full project repository to create a DIYABC-RF GUI standalone app release for Windows.
 
 ### Use
 
 Unzip the release file and run `DIYABC-RF_GUI.bat` in the extracted directory (either by double-clicking it or in a terminal).
+
+### Debugging
+
+If you encounter any issue, you can try to use the application as a local shiny app (it should give you additional verbosity). To do this you can run `cmd.exe /c run_local_app_debug.bat` from the previously extracted directory in a terminal.
+
