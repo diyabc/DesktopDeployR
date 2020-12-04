@@ -20,7 +20,7 @@ ensure = function(package, repo = 'https://cran.r-project.org', load = FALSE) {
     install.packages(package, repo = repo, lib = applibpath)
   }
   if (load) {
-    library(package, character.only = TRUE)
+    library(package, character.only = TRUE, quietly = TRUE)
   }
 }
 
@@ -52,7 +52,7 @@ appexit_msg = tryCatch({
 
   for (i in seq_along(packages)) {
     setWinProgressBar(pb, i/(length(packages)+1), label = sprintf('Loading package-%s', packages[i]))
-    library(packages[i], character.only = TRUE)
+    library(packages[i], character.only = TRUE, quietly = TRUE)
   }
 
   setWinProgressBar(pb, 1.00, label = 'Starting application')
