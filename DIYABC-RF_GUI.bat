@@ -1,5 +1,7 @@
 @echo off
 
+echo "loading DIYABC-RF_GUI"
+
 :: generate Renviron file
 dist\\R-Portable\\App\\R-Portable\\bin\\Rscript.exe generate_Renviron.R
 
