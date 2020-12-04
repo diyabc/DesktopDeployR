@@ -33,7 +33,7 @@ See [COPYRIGHTS](./COPYRIGHTS) for more details on copyrights and licensing.
 
 **Important**: you should not forget to quit the app when you are done with the dedicated button (otherwise some background related processes will remains active).
 
-> A log file for DIYABC-RF GUI is available in your user-specific directory for temporary files, generally `C:\Users\<username>\AppData\Local\Temp\DIYABC-RF_GUI_<timestamp>.log`.
+> A log file for DIYABC-RF GUI is available in your user-specific directory for temporary files, generally `C:\Users\<username>\AppData\Local\Temp\DIYABC-RF_GUI_<timestamp>_<random_number>/`.
 
 ---
 
