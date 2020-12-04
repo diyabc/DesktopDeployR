@@ -15,4 +15,4 @@ local({
 # running the app
 library(diyabcGUI)
 enable_logging()
-diyabc()
+browser_diyabc()
