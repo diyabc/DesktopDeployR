@@ -56,26 +56,12 @@ var oDEFAULTS = {
 // If deployed to a central location (e.g. a network share) use a directory in
 // each user's %userprofile%
 //' Determine User Home directory
-//var sUPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%");
-//var sAppUPath = sUPath + "\\." + oConfig.appname;
-//var sLogPath = oShell.ExpandEnvironmentStrings("%TEMP%");
-//if (oConfig.logging.use_userprofile) {
-//	var sLogPath = sAppUPath;
-//}
-
-// MODIFICATION Put everything in unique temp directory
-var dateTime = oShell.ExpandEnvironmentStrings("%DATE%") + "_" + oShell.ExpandEnvironmentStrings("%TIME%").slice(0, 8);
-
-var tempPath = oShell.ExpandEnvironmentStrings("%TEMP%");
-var randomTag = oShell.ExpandEnvironmentStrings("%RANDOM%") + oShell.ExpandEnvironmentStrings("%RANDOM%");
-
-var sLogPath = tempPath + "\\" + oConfig.appname + "_" + dateTime + "_" + randomTag;
-
-if (!oConfig.logging.use_userprofile) {
-    var sLogPath = sBaseDir + "\\" + oConfig.appname + "_" + dateTime + "_" + randomTag;
+var sUPath = oShell.ExpandEnvironmentStrings("%USERPROFILE%");
+var sAppUPath = sUPath + "\\." + oConfig.appname;
+var sLogPath = oShell.ExpandEnvironmentStrings("%TEMP%");
+if (oConfig.logging.use_userprofile) {
+	var sLogPath = sAppUPath;
 }
-
-var sAppUPath = sLogPath;
 
 //' Create an application log directory as needed
 if (!oFSO.FolderExists(sLogPath)) {
