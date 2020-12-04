@@ -23,10 +23,24 @@ if(!dir.exists(R_lib)) dir.create(R_lib)
 # requirement
 install.packages("devtools", lib = R_lib)
 install.packages("jsonlite", lib = R_lib)
-dep <- unlist(read.table(
+install.packages("pacman", lib = R_lib)
+dep <- unname(unlist(read.table(
     file.path("app", "packages.txt"), header = FALSE, stringsAsFactors = FALSE
-))
-install.packages(dep, lib = R_lib)
+)))
+
+# install.packages(dep, lib = R_lib)
+
+library(pacman)
+sapply(
+    dep, 
+    function(pkg) {
+        print(pkg)
+        pacman::p_install(
+            pkg, force = FALSE, try.bioconductor = FALSE, 
+            character.only = TRUE, lib = R_lib
+        )
+    }
+)
 
 # local install from Rcpp
 devtools::install(
