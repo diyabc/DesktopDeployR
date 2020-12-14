@@ -49,6 +49,8 @@ devtools::install(
 )
 
 # install diyabcGUI from zip source
+if(dir.exists(file.path(R_lib, "diyabcGUI")))
+    fs::dir_delete(file.path(R_lib, "diyabcGUI"))
 zip_src <- tail(sort(list.files("src", pattern = "diyabcGUI*")), 1)
 install.packages(
     file.path("src", zip_src), repos = NULL, type = "win.binary", lib = R_lib
