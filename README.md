@@ -60,9 +60,11 @@ Adapted from DesktopDeployR [framework](./DesktopDeployR.md)
 
 > You should now have `dist/R-Portable/App/R-Portable/bin/Rscript.exe` and `dist/R-Portable/App/R-Portable/bin/R.exe`.
 
-2. Run batch script `prepare.bat` inside project root directory (e.g. with `cmd.exe /c prepare.bat`).
+2. Setup path to Rtools (assuming it is available on the dev machine) in the .Renviron [file generator](./generate_Renviron.R).
 
-3. Zip full project repository to create a DIYABC-RF GUI standalone app release for Windows.
+3. Run batch script `prepare.bat` inside project root directory (e.g. with `cmd.exe /c prepare.bat`).
+
+4. Zip full project repository to create a DIYABC-RF GUI standalone app release for Windows.
 
 ### Use
 
