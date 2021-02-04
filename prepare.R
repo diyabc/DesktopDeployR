@@ -1,6 +1,9 @@
 ## install diyabcGUI and dependencies (for Windows)
 ## to be run by R-Portable
 
+# force update ?
+force_update <- TRUE
+
 message("---------------------------------------------------------------------")
 message("Starting preparation")
 message("---------------------------------------------------------------------")
@@ -9,38 +12,18 @@ message("---------------------------------------------------------------------")
 if(!file.exists(".Renviron"))
     stop("You should run 'generate_Renviron.R'")
 
-# default CRAN repos
-local({
-    r <- getOption("repos")
-    r["CRAN"] <- "https://cran.r-project.org"
-    options(repos=r)
-})
-
 # R lib
 R_lib <- file.path("app", "library")
 if(!dir.exists(R_lib)) dir.create(R_lib)
 
 # requirement
-install.packages("devtools", lib = R_lib)
-install.packages("jsonlite", lib = R_lib)
-install.packages("pacman", lib = R_lib)
-dep <- unname(unlist(read.table(
+pkg_list <- c("devtools", "jsonlite")
+install_pkg(pkg_list, force_update, R_lib)
+
+dep_list <- unname(unlist(read.table(
     file.path("app", "packages.txt"), header = FALSE, stringsAsFactors = FALSE
 )))
-
-# install.packages(dep, lib = R_lib)
-
-library(pacman)
-sapply(
-    dep, 
-    function(pkg) {
-        print(pkg)
-        pacman::p_install(
-            pkg, force = FALSE, try.bioconductor = FALSE, 
-            character.only = TRUE, lib = R_lib
-        )
-    }
-)
+install_pkg(dep_list, force_update, R_lib)
 
 # local install from Rcpp
 devtools::install(
