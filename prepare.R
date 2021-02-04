@@ -18,12 +18,12 @@ if(!dir.exists(R_lib)) dir.create(R_lib)
 
 # requirement
 pkg_list <- c("devtools", "jsonlite")
-install_pkg(pkg_list, force_update, R_lib)
+install_pkg(pkg_list, force_update, R_lib, type = "binary")
 
 dep_list <- unname(unlist(read.table(
     file.path("app", "packages.txt"), header = FALSE, stringsAsFactors = FALSE
 )))
-install_pkg(dep_list, force_update, R_lib)
+install_pkg(dep_list, force_update, R_lib, type = "binary")
 
 # local install from Rcpp
 devtools::install(
