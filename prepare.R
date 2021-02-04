@@ -25,11 +25,11 @@ dep_list <- unname(unlist(read.table(
 )))
 install_pkg(dep_list, force_update, R_lib, type = "binary")
 
-# local install from Rcpp
-devtools::install(
-    file.path("src", "Rcpp"), 
-    args = c(paste0('--library="', '.', .Platform$file.sep, R_lib, '"'))
-)
+# # local install from Rcpp
+# devtools::install(
+#     file.path("src", "Rcpp"), 
+#     args = c(paste0('--library="', '.', .Platform$file.sep, R_lib, '"'))
+# )
 
 # install diyabcGUI from zip source
 if(dir.exists(file.path(R_lib, "diyabcGUI")))
