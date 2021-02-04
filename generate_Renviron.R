@@ -1,5 +1,8 @@
 # generate Renviron file for prepare.R
+
 R_lib <- file.path(getwd(), "app", "library")
+if(!dir.exists(R_lib)) dir.create(R_lib, recursive = TRUE)
+
 Renviron_file <- ".Renviron"
 writeLines(
     c(
