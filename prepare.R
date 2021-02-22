@@ -25,10 +25,13 @@ dep_list <- unname(unlist(read.table(
 )))
 install_pkg(dep_list, force_update, R_lib, type = "binary")
 
+# version
+app_version <- readLines(file.path("src", "version"))
+
 # install diyabcGUI from zip source
 if(dir.exists(file.path(R_lib, "diyabcGUI")))
     fs::dir_delete(file.path(R_lib, "diyabcGUI"))
-zip_src <- tail(sort(list.files("src", pattern = "diyabcGUI*")), 1)
+zip_src <- paste0("diyabcGUI_", app_version, ".zip")
 install.packages(
     file.path("src", zip_src), repos = NULL, type = "win.binary", lib = R_lib
 )
